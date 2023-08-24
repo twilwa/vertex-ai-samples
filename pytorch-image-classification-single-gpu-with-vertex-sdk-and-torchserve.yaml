@@ -4,9 +4,9 @@ pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve:
   metadata:
     name: pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve
     description: >-
-      This application is a PyTorch-based image classification model that runs
-      on a single GPU, using Vertex AI SDK and TorchServe for deployment.
-    icon: https://emojiapi.dev/api/v1/snake.svg
+      This application is a simple PyTorch example for image classification (ant
+      or bee) using a pre-trained ResNet-18 model on Vertex AI.
+    icon: https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png
   containers:
     pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve:
       build: .
@@ -14,40 +14,35 @@ pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve:
     aip-model-dir:
       env: AIP_MODEL_DIR
       type: string
-      description: A Cloud Storage URI intended for saving model artifacts
+      description: Cloud Storage URI of a directory intended for saving model artifacts
       value: '!!!SETME!!!'
     aip-tensorboard-log-dir:
       env: AIP_TENSORBOARD_LOG_DIR
       type: string
-      description: A Cloud Storage URI intended for saving TensorBoard logs
+      description: Cloud Storage URI of a directory intended for saving TensorBoard logs
       value: '!!!SETME!!!'
     epochs:
       env: EPOCHS
       type: int
-      description: Number of training epochs
+      description: number of training epochs
       value: 25
     learning-rate:
       env: LEARNING_RATE
       type: float
-      description: Learning rate
+      description: learning rate
       value: 0.001
     momentum:
       env: MOMENTUM
       type: float
-      description: Momentum
+      description: momentum
       value: 0.9
     batch-size:
       env: BATCH_SIZE
       type: int
-      description: Mini-batch size
+      description: mini-batch size
       value: 4
     num-workers:
       env: NUM_WORKERS
       type: int
-      description: Number of workers
+      description: number of workers
       value: 4
-    local-mode:
-      env: LOCAL_MODE
-      type: string
-      description: Use local mode when running on your local machine
-      value: 'false'
