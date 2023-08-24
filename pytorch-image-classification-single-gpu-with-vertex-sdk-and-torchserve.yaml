@@ -1,0 +1,53 @@
+namespace: pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve
+pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve:
+  defines: runnable
+  metadata:
+    name: pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve
+    description: >-
+      This application is a PyTorch-based image classification model that runs
+      on a single GPU, using Vertex AI SDK and TorchServe for deployment.
+    icon: https://emojiapi.dev/api/v1/snake.svg
+  containers:
+    pytorch-image-classification-single-gpu-with-vertex-sdk-and-torchserve:
+      build: .
+  variables:
+    aip-model-dir:
+      env: AIP_MODEL_DIR
+      type: string
+      description: A Cloud Storage URI intended for saving model artifacts
+      value: '!!!SETME!!!'
+    aip-tensorboard-log-dir:
+      env: AIP_TENSORBOARD_LOG_DIR
+      type: string
+      description: A Cloud Storage URI intended for saving TensorBoard logs
+      value: '!!!SETME!!!'
+    epochs:
+      env: EPOCHS
+      type: int
+      description: Number of training epochs
+      value: 25
+    learning-rate:
+      env: LEARNING_RATE
+      type: float
+      description: Learning rate
+      value: 0.001
+    momentum:
+      env: MOMENTUM
+      type: float
+      description: Momentum
+      value: 0.9
+    batch-size:
+      env: BATCH_SIZE
+      type: int
+      description: Mini-batch size
+      value: 4
+    num-workers:
+      env: NUM_WORKERS
+      type: int
+      description: Number of workers
+      value: 4
+    local-mode:
+      env: LOCAL_MODE
+      type: string
+      description: Use local mode when running on your local machine
+      value: 'false'
